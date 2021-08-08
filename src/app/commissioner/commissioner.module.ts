@@ -6,6 +6,7 @@ import { CommissionerComponent } from './commissioner/commissioner.component';
 import { RewardListComponent } from './reward-list/reward-list.component';
 import { GivePointsComponent } from './give-points/give-points.component';
 import { RewardFormComponent } from './reward-form/reward-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,9 +16,10 @@ import { RewardFormComponent } from './reward-form/reward-form.component';
     GivePointsComponent,
     RewardFormComponent
   ],
-  imports: [
-    CommonModule,
-    CommissionerRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        CommissionerRoutingModule,
+        ReactiveFormsModule
+    ]
 })
 export class CommissionerModule { }
