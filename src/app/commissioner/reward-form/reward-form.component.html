@@ -1,1 +1,26 @@
-<p>reward-form works!</p>
+<form [formGroup]="rewardsForm" (ngSubmit)="onFormSubmit()">
+  <div class="mb-3">
+    <label>Title</label>
+    <input type="text" class="form-control" placeholder="Enter title for reward" formControlName="title">
+    <div class="invalid-feedback" [class.d-block]="isFormSubmitted && rewardsForm.controls.title.errors">
+      *Title is required
+    </div>
+  </div>
+  <div class="mb-3">
+    <label>Description</label>
+    <textarea class="form-control" placeholder="Enter description for reward" formControlName="description"></textarea>
+    <div class="invalid-feedback" [class.d-block]="isFormSubmitted && rewardsForm.controls.description.errors">
+      *Description is required
+    </div>
+  </div>
+  <div class="mb-3">
+    <label>Rewards points needed</label>
+    <input type="number" class="form-control" placeholder="Enter the points needed to unlock the reward" formControlName="pointsNeeded">
+    <div class="invalid-feedback" [class.d-block]="isFormSubmitted && rewardsForm.controls.title.errors">
+      *Reward points is required
+    </div>
+  </div>
+  <div class="text-center mb-3">
+    <button class="btn btn-success rounded-pill">Submit</button>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-give-points',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GivePointsComponent implements OnInit {
 
-  constructor() { }
+  points: number = 0;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  addPoints() {
+    this.points = this.points + 5;
+  }
+
+  removePoints() {
+    if (this.points >= 5) {
+      this.points = this.points - 5;
+    }
   }
 
 }

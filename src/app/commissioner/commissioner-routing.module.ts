@@ -4,13 +4,14 @@ import {GivePointsComponent} from "./give-points/give-points.component";
 import {RewardScreenComponent} from "../reward-screen/reward-screen.component";
 import {CommissionerComponent} from "./commissioner/commissioner.component";
 import {RewardFormComponent} from "./reward-form/reward-form.component";
+import {RewardListComponent} from "./reward-list/reward-list.component";
 
 const routes: Routes = [
   {path: 'give-points', component: GivePointsComponent},
   {
-    path: 'rewards', component: RewardScreenComponent, children: [
+    path: 'rewards', component: RewardListComponent, children: [
       {path: 'add-rewards', component: RewardFormComponent},
-      {path: 'edit-rewards', component: RewardFormComponent},
+      {path: 'edit-rewards/:id', component: RewardFormComponent},
     ]
   },
   {path: '', component: CommissionerComponent}

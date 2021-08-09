@@ -1,1 +1,52 @@
-<p>reward works!</p>
+<div class="full-screen">
+  <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand"><img src="../../../assets/reward-icon.png" height="50px" width="50px" alt="Reward Game">Hello
+        Senior</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapsedSection"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapsedSection">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/commissioner/give-points'" [routerLinkActive]="'active'">Give Points</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/commissioner/rewards'" [routerLinkActive]="'active'">Rewards</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <div class="d-flex justify-content-between mb-3">
+      <span class="h2">Rewards</span>
+      <button class="btn btn-info rounded-pill" [routerLink]="'/commissioner/rewards/add-rewards'">Add Reward</button>
+    </div>
+    <div class="row mx-0 h-100">
+      <div class="col-lg-6 col-md-6 col-sm-12 order-sm-0 order-1">
+        <div class="card card-body rounded shadow mb-3" *ngFor="let reward of rewards">
+          <div class="mb-1">
+            <p class="m-0 fw-bold">Title</p>
+            <p class="m-0">{{reward.title || ''}}</p>
+          </div>
+          <div class="mb-1">
+            <p class="m-0 fw-bold">Description</p>
+            <p class="m-0">{{reward.description || ''}}</p>
+          </div>
+          <div class="mb-1">
+            <p class="m-0 fw-bold">Reward points</p>
+            <p class="m-0">{{reward.pointsNeeded || ''}}</p>
+          </div>
+          <button class="btn btn-warning" (click)="onEditClick(reward.id)">Edit
+            <i class="far fa-edit"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 order-sm-1 order-0">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

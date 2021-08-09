@@ -1,1 +1,33 @@
-<p>give-points works!</p>
+<div class="full-screen">
+  <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand"><img src="../../../assets/reward-icon.png" height="50px" width="50px" alt="Reward Game">Hello
+        Senior</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapsedSection"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapsedSection">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/commissioner/give-points'" [routerLinkActive]="'active'">Give Points</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/commissioner/rewards'" [routerLinkActive]="'active'">Rewards</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <h5 class="text-center">Give points!</h5>
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="btn btn-danger rounded-pill" (click)="removePoints()"><i class="fas fa-minus-circle"></i></button>
+      <p><span class="display-1">{{points}}</span> <span>points</span></p>
+      <button class="btn btn-danger rounded-pill" (click)="addPoints()"><i class="fas fa-plus-circle"></i></button>
+    </div>
+    <div class="text-center mt-3">
+      <button class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</div>
