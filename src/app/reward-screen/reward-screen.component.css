@@ -1,0 +1,31 @@
+.rewards-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.service-container::-webkit-scrollbar {
+  display: none;
+}
+
+.reward-card {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  max-width: 300px;
+  width: 200px;
+  height: auto;
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  flex: 0 0 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+}
+
+.reward-card.locked {
+  background: lightcoral;
+}

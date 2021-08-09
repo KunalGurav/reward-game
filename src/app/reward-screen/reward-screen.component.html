@@ -1,7 +1,7 @@
 <div class="full-screen">
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand"><img src="../../assets/reward-icon.png" height="50px" width="50px" alt="Reward Game">Reward
+      <a class="navbar-brand" [routerLink]="'/'"><img src="../../assets/reward-icon.png" height="50px" width="50px" alt="Reward Game">Reward
         Game</a>
       <button class="btn btn-info" type="button" (click)="goToCommissionerPage()">Kawai Desu</button>
     </div>
@@ -9,12 +9,21 @@
   <div class="container">
     <div class="text-center">
       <h2>Current score: </h2>
-      <p><span class="display-1">45</span> points</p>
+      <p><span class="display-1">{{pointsEarned}}</span> points</p>
     </div>
     <br>
     <div class="reward-section">
       <h5>Rewards:</h5>
-      <div class="d-flex"></div>
+      <br>
+      <div class="rewards-container">
+        <div class="reward-card" [class.locked]="reward.pointsNeeded > pointsEarned" *ngFor="let reward of rewards">
+          <p *ngIf="reward.pointsNeeded > pointsEarned" class="h4 m-0">Unlocks at {{reward.pointsNeeded}} points</p>
+          <div *ngIf="reward.pointsNeeded <= pointsEarned">
+            <h5>{{reward.title}}</h5>
+            <p class="m-0 small">{{reward.description}}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

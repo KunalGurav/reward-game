@@ -35,6 +35,9 @@ export class RewardFormComponent implements OnInit {
     }
   }
 
+  /**
+   * This function is used to submit the form based on the state.
+   */
   onFormSubmit() {
     this.isFormSubmitted = true;
     if (this.rewardsForm.valid) {
@@ -53,6 +56,9 @@ export class RewardFormComponent implements OnInit {
     }
   }
 
+  /**
+   * This function is used to patch edit values to the form.
+   */
   patchValues() {
     const reward = this.rewardService.getRewardsFromId(this.idForEdit);
     if (reward)
@@ -62,6 +68,5 @@ export class RewardFormComponent implements OnInit {
         pointsNeeded: reward.pointsNeeded
       });
   }
-
 
 }
