@@ -42,6 +42,7 @@ export class RewardsService {
             tempRewards.push(reward);
             // console.log(item, index);
           }
+          localStorage.setItem('rewards', JSON.stringify(tempRewards));
           this.rewardsList.next([...tempRewards]);
           return tempRewards;
         }

@@ -22,6 +22,7 @@ export class RewardScreenComponent implements OnInit {
     this.pointService.points.subscribe(value => {
       this.pointsEarned = value;
     });
+    this.rewardService.fetchRewards().subscribe();
     this.rewardService.rewardsList.subscribe(items => {
       const sortedItems = items.sort((a, b) => a.pointsNeeded - b.pointsNeeded);
       this.rewards = sortedItems;
