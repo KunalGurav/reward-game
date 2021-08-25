@@ -27,6 +27,7 @@ export class PointsService {
     return this.http.get(`${environment.DOMAIN_URL}/points.json`).pipe(map(resp => {
       console.log('Points Response: ', resp);
       if (typeof resp === "number") {
+        localStorage.setItem('point', resp.toFixed(0));
         this.points.next(resp);
       }
     }));
