@@ -21,7 +21,7 @@ export class GivePointsComponent implements OnInit {
    */
   onFormSubmit() {
     if (this.points >= 5) {
-      this.pointService.updatePoints(this.points);
+      this.pointService.updatePoints(this.points).subscribe();
       alert('Successfully added points');
     } else {
       alert('Please add minimum 5 points');

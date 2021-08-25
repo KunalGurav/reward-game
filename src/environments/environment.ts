@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  DOMAIN_URL: 'https://reward-game-6ec35-default-rtdb.firebaseio.com',
   production: false
 };
 

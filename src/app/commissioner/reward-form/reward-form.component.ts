@@ -42,13 +42,13 @@ export class RewardFormComponent implements OnInit {
     this.isFormSubmitted = true;
     if (this.rewardsForm.valid) {
       if (this.idForEdit) {
-        this.rewardService.editRewards({id: this.idForEdit, ...this.rewardsForm.value});
+        this.rewardService.editRewards(this.idForEdit, this.rewardsForm.value).subscribe();
         this.rewardsForm.reset();
         this.idForEdit = null;
         this.isFormSubmitted = false;
         this.location.back();
       } else {
-        this.rewardService.addRewards({...this.rewardsForm.value});
+        this.rewardService.addRewards({...this.rewardsForm.value}).subscribe();
         this.rewardsForm.reset();
         this.isFormSubmitted = false;
         this.location.back();

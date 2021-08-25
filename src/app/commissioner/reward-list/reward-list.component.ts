@@ -19,6 +19,7 @@ export class RewardListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.rewardSubscription = this.rewardService.rewardsList.subscribe(rewards => this.rewards = rewards);
+    this.rewardService.fetchRewards().subscribe();
   }
 
   ngOnDestroy() {
@@ -27,6 +28,12 @@ export class RewardListComponent implements OnInit, OnDestroy {
 
   onEditClick(id: string) {
     this.router.navigate(['/commissioner','rewards','edit-rewards', id]);
+  }
+
+  onDeleteClick(id: string) {
+    if(confirm('Deleting rewards would be unfair to the players. Do you still want to delete ?')){
+      this.rewardService.deleteRewards(id).subscribe();
+    }
   }
 
 }

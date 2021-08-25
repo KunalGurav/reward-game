@@ -18,6 +18,7 @@ export class RewardScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pointService.fetchPoints().subscribe();
     this.pointService.points.subscribe(value => {
       this.pointsEarned = value;
     });
